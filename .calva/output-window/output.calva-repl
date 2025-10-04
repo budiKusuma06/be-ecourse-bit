@@ -1,35 +1,63 @@
-; This is the Calva REPL Window.
-; It's just a file, really, with some special treatment from Calva.
-; Use it as a REPL input prompt if you like. (When the REPL is connected.)
-; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
-; Please see https://calva.io/repl-window/ for more info.
-; Happy coding! ♥️
-
-; TIPS: As with any Clojure file when the REPL is connected:
-; - `alt+enter` evaluates the current top level form.
-; - `ctrl+enter` evaluates the current form.
-; Special for this file:
-; - `alt+up` and `alt+down` traverse up and down the REPL command history
-;    when the cursor is after the last contents at the prompt
-; 
-; See also the Calva Inspector: https://calva.io/inspector/
-
-PLEASE NOTE
-We will update the default location of this file.
-The new default location will be
-  "<projectRootPath>/.calva/repl.calva-repl"
-For now the legacy path is used by default.
-To give yourself a smooth transition, you can opt in
-to the change, by configuring this setting as false:
-  "calva.useLegacyReplWindowPath"
-and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
-
-
-This file is configured as the output destination for all REPL output.
-You can configure this with the setting:
-  "calva.outputDestinations"
-
-
+; nREPL Connection was closed
 ; Jacking in...
-; TypeError: Cannot read properties of undefined (reading 'label')
-; Aborting jack-in.
+; Connecting using "e-Course Server (autoreload)" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/noisy/Work/Clojure/be/be-ecourse-bit; lein update-in :dependencies conj '[nrepl,"1.3.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.55.4"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:43595 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Evaluating 'afterCLJReplJackInCode'
+; 
+; 🚀 Starting e-Course API...
+; → Database connection successful
+; → Table 'users' created
+; → Table 'student_profiles' created
+; → Table 'admin_profiles' created
+; → Table 'permissions' created
+; → Table 'admin_permissions' created
+; → Table 'courses' created
+; → Seeding permissions...
+; → Seeding users...
+;   Super admin ID: 1
+;   Found 6 permissions
+;     Granting permission ID: 4
+;     Granting permission ID: 2
+;     Granting permission ID: 6
+;     Granting permission ID: 1
+;     Granting permission ID: 5
+;     Granting permission ID: 3
+;   Regular admin ID: 2
+;     Granting course permission ID: 2
+;     Granting course permission ID: 3
+;   Student ID: 3
+;   Google student ID: 4
+; → Default credentials:
+;    Super Admin: superadmin@ecourse.com/superadmin123
+;    Admin: admin@ecourse.com/admin123
+;    Student: student@ecourse.com/student123
+;    Google Student: googlestudent@gmail.com (OAuth only)
+; → Seeding courses...
+; → Using Redis for session storage
+; → Starting HTTP server on port 3000
+; ✅ Server running at http://localhost:3000
+; 
+; 
+; 👁️  Starting auto-reload watcher...
+; ✅ Auto-reload enabled for src/ and dev/ directories
+;    Changes to .clj files will trigger automatic reload
+; 
+; 
+; ✅ Server started with auto-reload enabled
+; 📝 Edit any .clj file in src/ or dev/ to trigger reload
+; 🌐 Access the server at http://localhost:3000
+; 
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 

@@ -4,21 +4,27 @@
 
 (defn routes [services]
   (let [{:keys [course-service]} services]
-    [["/courses"
+    [;; ============================================
+     ;; Public Course Access
+     ;; ============================================
+     ["/courses"
       {:get {:handler (handlers/list-courses course-service)}}]
 
      ["/courses/:id"
       {:get {:handler (handlers/get-course course-service)}}]
 
+     ;; ============================================
+     ;; Course Management (Permission-based)
+     ;; ============================================
      ["/admin/courses"
-      {:post {:handler (mw/wrap-auth
+      {:post {:handler (mw/wrap-permission
                         (handlers/create-course course-service)
-                        {:roles #{"admin" "instructor"}})}}]
+                        ["manage_courses"])}}]
 
      ["/admin/courses/:id"
-      {:put {:handler (mw/wrap-auth
+      {:put {:handler (mw/wrap-permission
                        (handlers/update-course course-service)
-                       {:roles #{"admin" "instructor"}})}
-       :delete {:handler (mw/wrap-auth
+                       ["manage_courses"])}
+       :delete {:handler (mw/wrap-permission
                           (handlers/delete-course course-service)
-                          {:roles #{"admin"}})}}]]))
+                          ["manage_courses"])}}]]))

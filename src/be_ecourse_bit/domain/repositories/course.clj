@@ -1,6 +1,7 @@
 (ns be-ecourse-bit.domain.repositories.course
   (:require [next.jdbc :as jdbc]
-            [next.jdbc.sql :as sql]))
+            [next.jdbc.sql :as sql]
+            [next.jdbc.result-set :as rs]))
 
 (defprotocol CourseRepository
   (find-all [this])
@@ -12,10 +13,11 @@
 (defrecord JdbcCourseRepository [db]
   CourseRepository
   (find-all [_]
-    (sql/query db ["SELECT * FROM courses"]))
+    (sql/query db ["SELECT * FROM courses"]
+               {:builder-fn rs/as-unqualified-lower-maps}))
 
   (find-by-id [_ id]
-    (sql/get-by-id db :courses id))
+    (sql/get-by-id db :courses id {:builder-fn rs/as-unqualified-lower-maps}))
 
   (create! [_ course]
     (jdbc/with-transaction [tx db]
