@@ -55,7 +55,7 @@
   :start (let [app-router (router/create-router {:auth-service auth-service
                                                  :course-service course-service
                                                  :user-repository user-repository
-                                                 :session-store session-store})]  ; Add this
+                                                 :session-store session-store})]
            (-> (reitit/ring-handler app-router (reitit/create-default-handler))
                (mw/wrap-session session-store))))
 
@@ -64,5 +64,11 @@
            (println "→ Starting HTTP server on port" (:port (:server config)))
            (http/run-server #'app {:port (:port (:server config))}))
   :stop (do
-          (println "→ Stopping HTTP server")
-          (@http-server :timeout 100)))
+          (println "→ Stopping HTTP server...")
+          (try
+            (when http-server
+              (http-server :timeout 100))
+            (catch Exception e
+              (println "  Warning during shutdown:" (.getMessage e))))
+          (Thread/sleep 500)
+          (println "→ HTTP server stopped")))

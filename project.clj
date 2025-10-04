@@ -24,5 +24,10 @@
                  [clj-time "0.15.2"]]
   :main ^:skip-aot be-ecourse-bit.core
   :target-path "target/%s"
-  :profiles {:uberjar {:aot :all
+  :profiles {:dev {:dependencies [[io.github.tonsky/clj-reload "1.0.0"]
+                                  [hawk "0.2.11"]
+                                  [nrepl/nrepl "1.4.0"]]
+                   :source-paths ["dev"]
+                   :repl-options {:init-ns user}}
+             :uberjar {:aot :all
                        :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})

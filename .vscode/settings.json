@@ -1,0 +1,76 @@
+{
+    "calva.customREPLCommandSnippets": [
+        {
+            "name": "🚀 Start e-Course Server",
+            "ns": "user",
+            "repl": "clj",
+            "snippet": "(start)"
+        },
+        {
+            "name": "🛑 Stop e-Course Server",
+            "ns": "user",
+            "repl": "clj",
+            "snippet": "(stop)"
+        },
+        {
+            "name": "🔄 Restart e-Course Server",
+            "ns": "user",
+            "repl": "clj",
+            "snippet": "(restart)"
+        },
+        {
+            "name": "🔄 Reload & Restart Server",
+            "ns": "user",
+            "repl": "clj",
+            "snippet": "(reload-and-restart)"
+        },
+        {
+            "name": "👁️ Enable Auto-Reload",
+            "ns": "user",
+            "repl": "clj",
+            "snippet": "(start-auto-reload)"
+        },
+        {
+            "name": "🛑 Disable Auto-Reload",
+            "ns": "user",
+            "repl": "clj",
+            "snippet": "(stop-auto-reload)"
+        },
+        {
+            "name": "🚀 Dev Mode (with Auto-Reload)",
+            "ns": "user",
+            "repl": "clj",
+            "snippet": "(dev-mode)"
+        },
+        {
+            "name": "📊 Server Status",
+            "ns": "user",
+            "repl": "clj",
+            "snippet": "(status)"
+        }
+    ],
+    "calva.replConnectSequences": [
+        {
+            "name": "e-Course Server (autoreload)",
+            "projectType": "Leiningen",
+            "afterCLJReplJackInCode": "(do (in-ns 'user) (dev-mode) (println \"\\n✅ Server started with auto-reload enabled\") (println \"📝 Edit any .clj file in src/ or dev/ to trigger reload\") (println \"🌐 Access the server at http://localhost:3000\\n\"))",
+            "cljsType": "none",
+            "menuSelections": {
+                "leinProfiles": [
+                    "dev"
+                ]
+            }
+        },
+        {
+            "name": "e-Course Server",
+            "projectType": "Leiningen",
+            "afterCLJReplJackInCode": "(do (in-ns 'user) (start) (println \"\\n✅ Server started\") (println \"🔄 Use (reload-and-restart) to reload code\") (println \"🌐 Access the server at http://localhost:3000\\n\"))",
+            "cljsType": "none",
+            "menuSelections": {
+                "leinProfiles": [
+                    "dev"
+                ]
+            }
+        }
+    ]
+}
