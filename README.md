@@ -1,44 +1,81 @@
-# be-ecourse-bit
+# e-Course Backend System
 
-FIXME: description
+# Prerequisites
+- **Java JDK 17**
+- **Leiningen 2.12**
+- **MySQL 8.4.6**
+- **Redis 7.0.15**
+- **curl** or **Postman**
 
-## Installation
+# Project Structure
+```
+be-ecourse-bit/
+├── dev/
+│   └── user.clj
+├── src/
+│   └── be_ecourse_bit/
+│       ├── core.clj
+│       ├── system/
+│       │   ├── config.clj
+│       │   └── components.clj
+│       ├── domain/
+│       │   ├── repositories/
+│       │   │   ├── course.clj
+│       │   │   └── user.clj
+│       │   ├── services/
+│       │   │   ├── auth.clj
+│       │   │   └── course.clj
+│       │   └── validators.clj
+│       ├── http/
+│       │   ├── handlers/
+│       │   │   ├── home.clj
+│       │   │   ├── auth.clj
+│       │   │   ├── course.clj
+│       │   │   └── debug.clj
+│       │   ├── routes/
+│       │   │   ├── home.clj
+│       │   │   ├── auth.clj
+│       │   │   ├── course.clj
+│       │   │   └── debug.clj
+│       │   ├── middleware.clj
+│       │   └── router.clj
+│       └── infrastructure/
+│           ├── database.clj
+│           ├── redis.clj
+│           └── memory.clj
+├── .vscode/
+│   └── settings.json
+├── project.clj
+└── README.md
+```
 
-Download from http://example.com/FIXME.
+# Running the Application
+## Production Mode
+```bash
+# Build uberjar
+lein uberjar
 
-## Usage
+# Run the application
+java -jar target/uberjar/be-ecourse-bit-0.1.0-SNAPSHOT-standalone.jar
+```
+## Development Mode
+### Option 1: Using Leiningen
+```bash
+lein run
+```
+### Option 2: Using REPL
+```bash
+lein repl
 
-FIXME: explanation
-
-    $ java -jar be-ecourse-bit-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2025 FIXME
-
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+# In REPL
+user=> (start)              ; Start server
+user=> (dev-mode)           ; Start with auto-reload
+user=> (status)             ; Check status
+user=> (stop)               ; Stop server
+```
+### Option 3: Using VS Code + Calva
+1. Open project in VS Code
+2. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
+3. Select "Calva: Start a Project REPL and Connect (aka Jack-In)"
+4. Choose "e-Course Server (autoload)"
+5. Wait for server to start
