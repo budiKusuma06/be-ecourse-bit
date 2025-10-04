@@ -1,12 +1,4 @@
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "e-Course Server (autoreload)" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /home/noisy/Work/Clojure/be/be-ecourse-bit; lein update-in :dependencies conj '[nrepl,"1.3.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.55.4"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
-; Using host:port 127.0.0.1:43595 ...
+; Using host:port 127.0.0.1:40125 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -61,3 +53,303 @@ nil
 clj꞉user꞉> 
 ; Jack-in done.
 clj꞉user꞉> 
+; Sun Oct 05 01:12:32 WIB 2025 [http-kit-server-worker-5] ERROR - POST /auth/login
+; java.lang.IllegalArgumentException: No implementation of method: :authenticate-email of protocol: #'be-ecourse-bit.domain.services.auth/AuthService found for class: nil
+; 	at clojure.core$_cache_protocol_fn.invokeStatic(core_deftype.clj:584)
+; 	at clojure.core$_cache_protocol_fn.invoke(core_deftype.clj:576)
+; 	at be_ecourse_bit.domain.services.auth$eval13769$fn__13796$G__13756__13805.invoke(auth.clj:9)
+; 	at be_ecourse_bit.http.handlers.auth$login_email$fn__23188.invoke(auth.clj:55)
+; 	at muuntaja.middleware$wrap_format$fn__17987.invoke(middleware.clj:73)
+; 	at reitit.ring$ring_handler$fn__16543.invoke(ring.cljc:386)
+; 	at clojure.lang.AFn.applyToHelper(AFn.java:154)
+; 	at clojure.lang.AFn.applyTo(AFn.java:144)
+; 	at clojure.lang.AFunction$1.doInvoke(AFunction.java:31)
+; 	at clojure.lang.RestFn.invoke(RestFn.java:408)
+; 	at ring.middleware.session$wrap_session$fn__22595.invoke(session.clj:112)
+; 	at ring.middleware.cookies$wrap_cookies$fn__22566.invoke(cookies.clj:198)
+; 	at clojure.lang.Var.invoke(Var.java:384)
+; 	at org.httpkit.server$wrap_ring_websocket$ring_handler_STAR___23985.invoke(server.clj:443)
+; 	at org.httpkit.server.HttpHandler.runSync(RingHandler.java:144)
+; 	at org.httpkit.server.HttpHandler.run(RingHandler.java:138)
+; 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+; 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+; 	at java.base/java.lang.Thread.run(Thread.java:840)
+; Sun Oct 05 01:12:32 WIB 2025 [http-kit-server-worker-6] ERROR - POST /auth/login
+; java.lang.IllegalArgumentException: No implementation of method: :authenticate-email of protocol: #'be-ecourse-bit.domain.services.auth/AuthService found for class: nil
+; 	at clojure.core$_cache_protocol_fn.invokeStatic(core_deftype.clj:584)
+; 	at clojure.core$_cache_protocol_fn.invoke(core_deftype.clj:576)
+; 	at be_ecourse_bit.domain.services.auth$eval13769$fn__13796$G__13756__13805.invoke(auth.clj:9)
+; 	at be_ecourse_bit.http.handlers.auth$login_email$fn__23188.invoke(auth.clj:55)
+; 	at muuntaja.middleware$wrap_format$fn__17987.invoke(middleware.clj:73)
+; 	at reitit.ring$ring_handler$fn__16543.invoke(ring.cljc:386)
+; 	at clojure.lang.AFn.applyToHelper(AFn.java:154)
+; 	at clojure.lang.AFn.applyTo(AFn.java:144)
+; 	at clojure.lang.AFunction$1.doInvoke(AFunction.java:31)
+; 	at clojure.lang.RestFn.invoke(RestFn.java:408)
+; 	at ring.middleware.session$wrap_session$fn__22595.invoke(session.clj:112)
+; 	at ring.middleware.cookies$wrap_cookies$fn__22566.invoke(cookies.clj:198)
+; 	at clojure.lang.Var.invoke(Var.java:384)
+; 	at org.httpkit.server$wrap_ring_websocket$ring_handler_STAR___23985.invoke(server.clj:443)
+; 	at org.httpkit.server.HttpHandler.runSync(RingHandler.java:144)
+; 	at org.httpkit.server.HttpHandler.run(RingHandler.java:138)
+; 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+; 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+; 	at java.base/java.lang.Thread.run(Thread.java:840)
+; Sun Oct 05 01:12:32 WIB 2025 [http-kit-server-worker-7] ERROR - POST /auth/login
+; java.lang.IllegalArgumentException: No implementation of method: :authenticate-email of protocol: #'be-ecourse-bit.domain.services.auth/AuthService found for class: nil
+; 	at clojure.core$_cache_protocol_fn.invokeStatic(core_deftype.clj:584)
+; 	at clojure.core$_cache_protocol_fn.invoke(core_deftype.clj:576)
+; 	at be_ecourse_bit.domain.services.auth$eval13769$fn__13796$G__13756__13805.invoke(auth.clj:9)
+; 	at be_ecourse_bit.http.handlers.auth$login_email$fn__23188.invoke(auth.clj:55)
+; 	at muuntaja.middleware$wrap_format$fn__17987.invoke(middleware.clj:73)
+; 	at reitit.ring$ring_handler$fn__16543.invoke(ring.cljc:386)
+; 	at clojure.lang.AFn.applyToHelper(AFn.java:154)
+; 	at clojure.lang.AFn.applyTo(AFn.java:144)
+; 	at clojure.lang.AFunction$1.doInvoke(AFunction.java:31)
+; 	at clojure.lang.RestFn.invoke(RestFn.java:408)
+; 	at ring.middleware.session$wrap_session$fn__22595.invoke(session.clj:112)
+; 	at ring.middleware.cookies$wrap_cookies$fn__22566.invoke(cookies.clj:198)
+; 	at clojure.lang.Var.invoke(Var.java:384)
+; 	at org.httpkit.server$wrap_ring_websocket$ring_handler_STAR___23985.invoke(server.clj:443)
+; 	at org.httpkit.server.HttpHandler.runSync(RingHandler.java:144)
+; 	at org.httpkit.server.HttpHandler.run(RingHandler.java:138)
+; 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+; 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+; 	at java.base/java.lang.Thread.run(Thread.java:840)
+; Sun Oct 05 01:12:32 WIB 2025 [http-kit-server-worker-8] ERROR - POST /auth/login/google
+; java.lang.IllegalArgumentException: No implementation of method: :authenticate-google of protocol: #'be-ecourse-bit.domain.services.auth/AuthService found for class: nil
+; 	at clojure.core$_cache_protocol_fn.invokeStatic(core_deftype.clj:584)
+; 	at clojure.core$_cache_protocol_fn.invoke(core_deftype.clj:576)
+; 	at be_ecourse_bit.domain.services.auth$eval13769$fn__13811$G__13758__13818.invoke(auth.clj:9)
+; 	at be_ecourse_bit.http.handlers.auth$login_google$fn__23192.invoke(auth.clj:71)
+; 	at muuntaja.middleware$wrap_format$fn__17987.invoke(middleware.clj:73)
+; 	at reitit.ring$ring_handler$fn__16543.invoke(ring.cljc:386)
+; 	at clojure.lang.AFn.applyToHelper(AFn.java:154)
+; 	at clojure.lang.AFn.applyTo(AFn.java:144)
+; 	at clojure.lang.AFunction$1.doInvoke(AFunction.java:31)
+; 	at clojure.lang.RestFn.invoke(RestFn.java:408)
+; 	at ring.middleware.session$wrap_session$fn__22595.invoke(session.clj:112)
+; 	at ring.middleware.cookies$wrap_cookies$fn__22566.invoke(cookies.clj:198)
+; 	at clojure.lang.Var.invoke(Var.java:384)
+; 	at org.httpkit.server$wrap_ring_websocket$ring_handler_STAR___23985.invoke(server.clj:443)
+; 	at org.httpkit.server.HttpHandler.runSync(RingHandler.java:144)
+; 	at org.httpkit.server.HttpHandler.run(RingHandler.java:138)
+; 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+; 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+; 	at java.base/java.lang.Thread.run(Thread.java:840)
+; Sun Oct 05 01:12:32 WIB 2025 [http-kit-server-worker-1] ERROR - GET /courses
+; java.lang.IllegalArgumentException: No implementation of method: :list-courses of protocol: #'be-ecourse-bit.domain.services.course/CourseService found for class: nil
+; 	at clojure.core$_cache_protocol_fn.invokeStatic(core_deftype.clj:584)
+; 	at clojure.core$_cache_protocol_fn.invoke(core_deftype.clj:576)
+; 	at be_ecourse_bit.domain.services.course$eval13924$fn__13938$G__13907__13943.invoke(course.clj:4)
+; 	at be_ecourse_bit.http.handlers.course$list_courses$fn__23310.invoke(course.clj:19)
+; 	at muuntaja.middleware$wrap_format$fn__17987.invoke(middleware.clj:73)
+; 	at reitit.ring$ring_handler$fn__16543.invoke(ring.cljc:386)
+; 	at clojure.lang.AFn.applyToHelper(AFn.java:154)
+; 	at clojure.lang.AFn.applyTo(AFn.java:144)
+; 	at clojure.lang.AFunction$1.doInvoke(AFunction.java:31)
+; 	at clojure.lang.RestFn.invoke(RestFn.java:408)
+; 	at ring.middleware.session$wrap_session$fn__22595.invoke(session.clj:112)
+; 	at ring.middleware.cookies$wrap_cookies$fn__22566.invoke(cookies.clj:198)
+; 	at clojure.lang.Var.invoke(Var.java:384)
+; 	at org.httpkit.server$wrap_ring_websocket$ring_handler_STAR___23985.invoke(server.clj:443)
+; 	at org.httpkit.server.HttpHandler.runSync(RingHandler.java:144)
+; 	at org.httpkit.server.HttpHandler.run(RingHandler.java:138)
+; 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+; 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+; 	at java.base/java.lang.Thread.run(Thread.java:840)
+; Sun Oct 05 01:12:32 WIB 2025 [http-kit-server-worker-2] ERROR - GET /courses/1
+; java.lang.IllegalArgumentException: No implementation of method: :get-course of protocol: #'be-ecourse-bit.domain.services.course/CourseService found for class: nil
+; 	at clojure.core$_cache_protocol_fn.invokeStatic(core_deftype.clj:584)
+; 	at clojure.core$_cache_protocol_fn.invoke(core_deftype.clj:576)
+; 	at be_ecourse_bit.domain.services.course$eval13924$fn__13949$G__13909__13956.invoke(course.clj:4)
+; 	at be_ecourse_bit.http.handlers.course$get_course$fn__23313.invoke(course.clj:25)
+; 	at muuntaja.middleware$wrap_format$fn__17987.invoke(middleware.clj:73)
+; 	at reitit.ring$ring_handler$fn__16543.invoke(ring.cljc:386)
+; 	at clojure.lang.AFn.applyToHelper(AFn.java:154)
+; 	at clojure.lang.AFn.applyTo(AFn.java:144)
+; 	at clojure.lang.AFunction$1.doInvoke(AFunction.java:31)
+; 	at clojure.lang.RestFn.invoke(RestFn.java:408)
+; 	at ring.middleware.session$wrap_session$fn__22595.invoke(session.clj:112)
+; 	at ring.middleware.cookies$wrap_cookies$fn__22566.invoke(cookies.clj:198)
+; 	at clojure.lang.Var.invoke(Var.java:384)
+; 	at org.httpkit.server$wrap_ring_websocket$ring_handler_STAR___23985.invoke(server.clj:443)
+; 	at org.httpkit.server.HttpHandler.runSync(RingHandler.java:144)
+; 	at org.httpkit.server.HttpHandler.run(RingHandler.java:138)
+; 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+; 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+; 	at java.base/java.lang.Thread.run(Thread.java:840)
+; Sun Oct 05 01:12:32 WIB 2025 [http-kit-server-worker-3] ERROR - GET /courses/999
+; java.lang.IllegalArgumentException: No implementation of method: :get-course of protocol: #'be-ecourse-bit.domain.services.course/CourseService found for class: nil
+; 	at clojure.core$_cache_protocol_fn.invokeStatic(core_deftype.clj:584)
+; 	at clojure.core$_cache_protocol_fn.invoke(core_deftype.clj:576)
+; 	at be_ecourse_bit.domain.services.course$eval13924$fn__13949$G__13909__13956.invoke(course.clj:4)
+; 	at be_ecourse_bit.http.handlers.course$get_course$fn__23313.invoke(course.clj:25)
+; 	at muuntaja.middleware$wrap_format$fn__17987.invoke(middleware.clj:73)
+; 	at reitit.ring$ring_handler$fn__16543.invoke(ring.cljc:386)
+; 	at clojure.lang.AFn.applyToHelper(AFn.java:154)
+; 	at clojure.lang.AFn.applyTo(AFn.java:144)
+; 	at clojure.lang.AFunction$1.doInvoke(AFunction.java:31)
+; 	at clojure.lang.RestFn.invoke(RestFn.java:408)
+; 	at ring.middleware.session$wrap_session$fn__22595.invoke(session.clj:112)
+; 	at ring.middleware.cookies$wrap_cookies$fn__22566.invoke(cookies.clj:198)
+; 	at clojure.lang.Var.invoke(Var.java:384)
+; 	at org.httpkit.server$wrap_ring_websocket$ring_handler_STAR___23985.invoke(server.clj:443)
+; 	at org.httpkit.server.HttpHandler.runSync(RingHandler.java:144)
+; 	at org.httpkit.server.HttpHandler.run(RingHandler.java:138)
+; 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+; 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+; 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+; 	at java.base/java.lang.Thread.run(Thread.java:840)
+; Sun Oct 05 01:12:33 WIB 2025 [http-kit-server-worker-1] ERROR - GET /debug/users
+; java.lang.IllegalArgumentException: No implementation of method: :find-all of protocol: #'be-ecourse-bit.domain.repositories.user/UserRepository found for class: nil
+; 	at clojure.core$_cache_protocol_fn.invokeStatic(core_deftype.clj:584)
+; 	at clojure.core$_cache_protocol_fn.invoke(core_deftype.clj:576)
+; 	at be_ecourse_bit.domain.repositories.user$eval12307$fn__12349$G__12290__12354.invoke(user.clj:6)
+; 	at be_ecourse_bit.http.handlers.debug$list_users$fn__23348.invoke(debug.clj:10)
+; 	at muuntaja.middleware$wrap_format$fn__17987.invoke(middleware.clj:73)
+; 	at reitit.ring$ring_handler$fn__16543.invoke(ring.cljc:386)
+; 	at clojure.lang.AFn.applyToHelper(AFn.java:154)
+; 	at clojure.lang.AFn.applyTo(AFn.java:144)
+; 	at clojure.lang.AFunction$1.doInvoke(AFunction.java:31)
+; 	at clojure.lang.RestFn.invoke(RestFn.java:408)
+; 	at ring.middleware.session$wrap_session$fn__22595.invoke(session.clj:112)
+; 	at ring.middleware.cookies$wrap_cookies$fn__22566.invoke(cookies.clj:198)
+; 	at clojure.lang.Var.invoke(Var.java:384)
+; 	at org.httpkit.server$wrap_ring_websocket$ring_handler_STAR___23985.invoke(server.clj:443)
+; 	at org.httpkit.server.HttpHandler.runSync(RingHandler.java:144)
+; 	at org.httpkit.server.HttpHandler.run(RingHandler.java:138)
+; 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+; 	at java.base/java.ut
+; 📝 File changed: /home/noisy/Work/Clojure/be/be-ecourse-bit/src/be_ecourse_bit/system/components.clj
+; 
+; 🔄 Reloading code and restarting...
+; 
+; 🛑 Stopping e-Course API...
+; → Stopping HTTP server...
+; → HTTP server stopped
+; → Closing database connection pool...
+;   Warning closing DB: No matching field found: close for class next.jdbc.connection$url_PLUS_etc$reify__2418
+; → Database connection closed
+; ✅ Server stopped
+; 
+; Reloading 2 namespaces...
+; Reloaded 2 namespaces in 91 ms
+; 
+; 🚀 Starting e-Course API...
+; → Database connection successful
+; → Table 'users' created
+; → Table 'student_profiles' created
+; → Table 'admin_profiles' created
+; → Table 'permissions' created
+; → Table 'admin_permissions' created
+; → Table 'courses' created
+; → Using Redis for session storage
+; → Starting HTTP server on port 3000
+; ✅ Server running at http://localhost:3000
+; 
+; ✅ Code reloaded and server restarted
+; 
+; 
+; 📝 File changed: /home/noisy/Work/Clojure/be/be-ecourse-bit/src/be_ecourse_bit/system/components.clj
+; 
+; 🔄 Reloading code and restarting...
+; 
+; 🛑 Stopping e-Course API...
+; → Stopping HTTP server...
+; → HTTP server stopped
+; → Closing database connection pool...
+;   Warning closing DB: No matching field found: close for class next.jdbc.connection$url_PLUS_etc$reify__2418
+; → Database connection closed
+; ✅ Server stopped
+; 
+; Reloading 0 namespaces...
+; Reloaded 0 namespaces in 12 ms
+; 
+; 🚀 Starting e-Course API...
+; → Database connection successful
+; → Table 'users' created
+; → Table 'student_profiles' created
+; → Table 'admin_profiles' created
+; → Table 'permissions' created
+; → Table 'admin_permissions' created
+; → Table 'courses' created
+; → Using Redis for session storage
+; → Starting HTTP server on port 3000
+; ✅ Server running at http://localhost:3000
+; 
+; ✅ Code reloaded and server restarted
+; 
+; 
+; 📝 File changed: /home/noisy/Work/Clojure/be/be-ecourse-bit/src/be_ecourse_bit/system/components.clj
+; 
+; 🔄 Reloading code and restarting...
+; 
+; 🛑 Stopping e-Course API...
+; → Stopping HTTP server...
+; → HTTP server stopped
+; → Closing database connection pool...
+;   Warning closing DB: No matching field found: close for class next.jdbc.connection$url_PLUS_etc$reify__2418
+; → Database connection closed
+; ✅ Server stopped
+; 
+; Reloading 2 namespaces...
+; Reloaded 2 namespaces in 64 ms
+; 
+; 🚀 Starting e-Course API...
+; → Database connection successful
+; → Table 'users' created
+; → Table 'student_profiles' created
+; → Table 'admin_profiles' created
+; → Table 'permissions' created
+; → Table 'admin_permissions' created
+; → Table 'courses' created
+; → Using Redis for session storage
+; → Starting HTTP server on port 3000
+; ✅ Server running at http://localhost:3000
+; 
+; ✅ Code reloaded and server restarted
+; 
+; 
+; 📝 File changed: /home/noisy/Work/Clojure/be/be-ecourse-bit/src/be_ecourse_bit/system/components.clj
+; 
+; 🔄 Reloading code and restarting...
+; 
+; 🛑 Stopping e-Course API...
+; → Stopping HTTP server...
+; → HTTP server stopped
+; → Closing database connection pool...
+;   Warning closing DB: No matching field found: close for class next.jdbc.connection$url_PLUS_etc$reify__2418
+; → Database connection closed
+; ✅ Server stopped
+; 
+; Reloading 0 namespaces...
+; Reloaded 0 namespaces in 6 ms
+; 
+; 🚀 Starting e-Course API...
+; → Database connection successful
+; → Table 'users' created
+; → Table 'student_profiles' created
+; → Table 'admin_profiles' created
+; → Table 'permissions' created
+; → Table 'admin_permissions' created
+; → Table 'courses' created
+; → Using Redis for session storage
+; → Starting HTTP server on port 3000
+; ✅ Server running at http://localhost:3000
+; 
+; ✅ Code reloaded and server restarted
+; 

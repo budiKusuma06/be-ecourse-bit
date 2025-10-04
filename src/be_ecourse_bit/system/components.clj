@@ -26,7 +26,14 @@
            (db/create-tables! db)
            (db/seed-data! db)
            db)
-  :stop (println "→ Database connection closed"))
+  :stop (do
+          (println "→ Closing database connection pool...")
+          (when (instance? javax.sql.DataSource database)
+            (try
+              (.close database)
+              (catch Exception e
+                (println "  Warning closing DB:" (.getMessage e)))))
+          (println "→ Database connection closed")))
 
 ;; Infrastructure - Session Store
 (defstate session-store
@@ -39,47 +46,37 @@
                (println "→ Using in-memory session storage")
                (memory/create-memory-store)))))
 
-;; Domain - Repositories
-(defstate course-repository
-  :start (course-repo/create-repository database))
+;; Domain Layer - Gabung repositories & services
+(defstate domain
+  :start (let [;; Create repositories
+               course-repo (course-repo/create-repository database)
+               user-repo (user-repo/create-repository database)
+               profile-repo (profile-repo/create-repository database)
+               permission-repo (perm-repo/create-repository database)
+               ;; Create services
+               auth-svc (auth-svc/create-service user-repo profile-repo permission-repo)
+               course-svc (course-svc/create-service course-repo)
+               admin-svc (admin-svc/create-service user-repo profile-repo permission-repo)]
+           {:auth-service auth-svc
+            :course-service course-svc
+            :admin-service admin-svc
+            :user-repository user-repo
+            :profile-repository profile-repo
+            :course-repository course-repo
+            :permission-repository permission-repo}))
 
-(defstate user-repository
-  :start (user-repo/create-repository database))
-
-(defstate profile-repository
-  :start (profile-repo/create-repository database))
-
-(defstate permission-repository
-  :start (perm-repo/create-repository database))
-
-;; Domain - Services
-(defstate auth-service
-  :start (auth-svc/create-service user-repository profile-repository permission-repository))
-
-(defstate course-service
-  :start (course-svc/create-service course-repository))
-
-(defstate admin-service
-  :start (admin-svc/create-service user-repository profile-repository permission-repository))
-
-;; HTTP - Server
+;; HTTP Layer
 (defstate app
-  :start (let [app-router (router/create-router {:auth-service auth-service
-                                                 :course-service course-service
-                                                 :admin-service admin-service
-                                                 :user-repository user-repository
-                                                 :profile-repository profile-repository
-                                                 :session-store session-store})]
-           (-> (reitit/ring-handler
-                app-router
-                (reitit/create-default-handler
-                 {:not-found router/not-found-handler
-                  :method-not-allowed router/method-not-allowed-handler
-                  :not-acceptable (fn [_]
-                                    {:status 406
-                                     :headers {"Content-Type" "application/json"}
-                                     :body {:error "Not acceptable"}})}))
-               (mw/wrap-session session-store))))
+  :start (-> (reitit/ring-handler
+              (router/create-router (assoc domain :session-store session-store))
+              (reitit/create-default-handler
+               {:not-found router/not-found-handler
+                :method-not-allowed router/method-not-allowed-handler
+                :not-acceptable (fn [_]
+                                  {:status 406
+                                   :headers {"Content-Type" "application/json"}
+                                   :body {:error "Not acceptable"}})}))
+             (mw/wrap-session session-store)))
 
 (defstate http-server
   :start (do
